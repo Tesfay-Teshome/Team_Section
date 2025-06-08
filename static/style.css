@@ -1,128 +1,123 @@
 *{
     margin:0;
     padding:0;
+    box-sizing: border-box; /* add this one*/
 }
 section{
-    background-attachment: fixed;
-    background-image: url(../images/background_image/background.jpg);
+    background-image:url(../images/background_image/background.jpg);
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
-    background-position:center;
+    background-position: center;
     position: relative;
-    display:flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width:100%;
-    height:100vh;
+    width: 100%;
+    min-height: 100vh; /* changed from height to min-height */
     top:0;
     left:0;
+    padding-bottom: 20px; /* space for the foter */
+
 }
 .container{
     position: relative;
     display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:0.8rem;
-    width:100%;
-    padding:10px;
-    margin-top:20px;
-    overflow-y:auto;
-}
-.overlay{
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.5);
-    width:100%;
-    height: 100%;
-    z-index: 1;
-}
-.card{
-    background: linear-gradient(210deg, rgba(34, 34, 34, 0.5)10%, rgba(169, 169, 172, 0.5)90%);
-    backdrop-filter: blur(5px);
-    width:13rem;
-    height: 18rem;
-    display: flex;
     flex-wrap: wrap;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap:1rem;
+    padding:10px;
+    max-width:1200px; /* test */
+    margin: 20px auto; /* centered container */
+    overflow-y: visible;
+    min-height: auto;
+}
+.overlay{
+    position:absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+}
+.card{
+    background: linear-gradient(210deg, rgba(34, 34, 34, 0.4)10%, rgba(169, 169, 169, 0.4)90%);
+    backdrop-filter: blur(5px);
+    color:black;
+    width: 15rem;
+    height: 18rem;
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    gap:10px;
-    padding:0.1rem;
     border-radius: 10px;
-    color:white;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.9);
-    z-index: 2;
+    z-index:2;
+    gap:10px;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.9);
+
 }
-h3{
+h3 {
     padding:5px;
-    font-family:verdana;
-    font-size:1.0rem;
-    font-weight:bold;
+    font-size: 1.1rem;
+    font-family: verdana;
 }
-p{
-    padding:0.5rem;
-    font-family:verdana;
-    font-size:0.9rem;
-    font-weight:lighter;
+.card p{
+    font-size: 0.8rem;
+    font-family: verdana;
+    font-weight: lighter;
 }
 .container .card:hover{
-    transform: scale(1.05) translateZ(10px);
-    transition: 0.5s ease-in-out;
-    box-shadow: 1px 4px 10px rgba(13, 94, 126, 0.9);
+   transform: scale(1.05) translateZ(10px);
+   transition: all 0.5s ease-in-out;
+}
+.card img{
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
 }
 .text-content{
     color:white;
-    z-index:3;
     font-size:2rem;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-
-
+    margin-bottom:10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index:2;
 }
 header{
-    position:fixed;
-    background: linear-gradient(180deg, rgba(14, 99, 179, 0.5)0%, rgba(4, 11, 110, 0.0)100%);
+    background: linear-gradient(180deg, rgba(3, 74, 139, 0.95)0%,rgba(0, 0, 0, 0)100%);
+    position: fixed;
     z-index:1000;
+    width:100%;
     top:0;
     left:0;
-    width:100%;
     height:7vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
-nav{
-    gap:10px;
-    padding:10px;
-    align-items: center;
-    justify-content: center;
-}
-nav a{
-    color:white;
-    text-decoration: none;
-    font-family:verdana;
-    gap:10px;
-    padding:10px;
-}
-
-img{
-    width:5rem;
-    height:5rem;
-    border-radius:50%;
-    object-fit: cover;
-}
 footer{
-    z-index:1000;
-    position:relative;
+    position: relative; 
+    background-color: rgb(3, 59, 124);
+    z-index:10;
     bottom:0;
-    background-color:rgba(4, 4, 83);
+    left:0;
     width:100%;
     display:flex;
+    justify-content:center;
     align-items:center;
-    justify-content: center;
     padding:10px;
+    min-height: 7vh;
+}
+
+nav a{
+    color:white;
+    font-family: verdana;
+    padding: 10px;
 }
