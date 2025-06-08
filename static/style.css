@@ -1,7 +1,7 @@
 *{
     margin:0;
     padding:0;
-    box-sizing: border-box; /* add this one*/
+    box-sizing: border-box; /* add this one padding doesn't add to element width */
 }
 section{
     background-image:url(../images/background_image/background.jpg);
@@ -15,7 +15,7 @@ section{
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh; /* changed from height to min-height */
+    min-height: 100vh;/* changed from height to min-height for better conent flow */
     top:0;
     left:0;
     padding-bottom: 20px; /* space for the foter */
@@ -43,7 +43,10 @@ section{
     left:0;
 }
 .card{
-    background: linear-gradient(210deg, rgba(34, 34, 34, 0.4)10%, rgba(169, 169, 169, 0.4)90%);
+    background: linear-gradient(130deg, 
+    rgba(3, 59, 124,0.6)0%,
+    rgba(2, 112, 155,0.6)33%,
+    rgba(1, 158, 22,0.6)100%);
     backdrop-filter: blur(5px);
     color:black;
     width: 15rem;
@@ -51,6 +54,9 @@ section{
     display:flex;
     flex-direction: column;
     flex-wrap:wrap;
+    flex: 1 1 15rem;
+    min-width: 12rem;
+    max-width:15rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -59,6 +65,7 @@ section{
     gap:10px;
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.9);
+
 
 }
 h3 {
@@ -90,8 +97,14 @@ h3 {
     z-index:2;
 }
 header{
-    background: linear-gradient(180deg, rgba(3, 74, 139, 0.95)0%,rgba(0, 0, 0, 0)100%);
+    background: linear-gradient(90deg, 
+    rgb(3, 106, 224),
+    rgb(157, 0, 189),
+    rgb(1, 156, 9),
+    rgb(3, 106, 224));
     position: fixed;
+    background-size: 300% 100%;
+    animation: wave 6s linear infinite;
     z-index:1000;
     width:100%;
     top:0;
@@ -102,9 +115,20 @@ header{
     justify-content: center;
 
 }
+@keyframes wave{
+  0%{
+    background-position: 0% 0%;
+  }
+  100%{
+    background-position: 100% 0%;
+  }
+}
 footer{
     position: relative; 
-    background-color: rgb(3, 59, 124);
+    background: linear-gradient(90deg, 
+    rgb(3, 59, 124)0%,
+    rgb(2, 112, 155)33%,
+    rgb(1, 158, 22)100%);
     z-index:10;
     bottom:0;
     left:0;
