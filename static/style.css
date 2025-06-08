@@ -44,9 +44,12 @@ section{
 }
 .card{
     background: linear-gradient(130deg, 
-    rgba(3, 59, 124,0.6)0%,
-    rgba(2, 112, 155,0.6)33%,
-    rgba(1, 158, 22,0.6)100%);
+    rgba(3, 59, 124),
+    rgba(149, 3, 185),
+    rgb(1, 138, 63),
+    rgba(3, 59, 124));
+    background-size: 300% 100%;
+    animation: cardwave 6s linear infinite; 
     backdrop-filter: blur(5px);
     color:black;
     width: 15rem;
@@ -66,8 +69,17 @@ section{
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.9);
 
-
 }
+
+@keyframes cardwave{
+ 0%{
+    background-position: 0% 0%;
+ }   
+ 100%{
+    background-position: 100% 0%;
+ }
+}
+
 h3 {
     padding:5px;
     font-size: 1.1rem;
